@@ -24,6 +24,20 @@ namespace Kreta.Backend.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // 1:N 
+            modelBuilder.Entity<EducationLevel>()
+                .HasMany(el => el.Students)
+                .WithOne(s => s.EducationLevel)
+                .HasForeignKey(s => s.EducationLevelId)
+                .IsRequired(false);
+            // 1:N TypeOfEducation - SchoolClass
+            modelBuilder.Entity<TypeOfEducation>()
+                .HasMany(toe => toe.SchoolClasses)
+                .WithOne(sc => sc.TypeOfEducation)
+                .HasForeignKey(sc => sc.TypeOfEducationId)
+                .IsRequired(false);
+
+            // N:M SchoolClass - Subject
             modelBuilder.Entity<SchoolClassSubjects>()
                 .HasOne(schoolClassSubject => schoolClassSubject.SchoolClass)
                 .WithMany(subject => subject.SchoolClassSubjects)
