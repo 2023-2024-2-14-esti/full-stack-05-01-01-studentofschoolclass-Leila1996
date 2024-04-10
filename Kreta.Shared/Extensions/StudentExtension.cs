@@ -12,6 +12,7 @@ namespace Kreta.Shared.Extensions
                 Id = student.Id,
                 EducationLevelId = student.EducationLevelId,
                 SchoolClassID = student.SchoolClassID,
+                SchoolClass = student.SchoolClass,
                 MotherId = student.MotherId,
                 FatherId = student.FatherId,
                 AddressId = student.AddressId,
@@ -21,6 +22,9 @@ namespace Kreta.Shared.Extensions
                 PlaceOfBirth = student.PlaceOfBirth,    
                 IsWoman = student.IsWoman,
                 EducationLevel = student.EducationLevel,
+                Mather=student.Mather,
+                Father=student.Father,
+                //Address=student.Address,
             };
         }
 
@@ -31,6 +35,7 @@ namespace Kreta.Shared.Extensions
                 Id = studentdto.Id,
                 EducationLevelId = studentdto.EducationLevelId,
                 SchoolClassID=studentdto.SchoolClassID,
+                SchoolClass = studentdto.SchoolClass,
                 MotherId=studentdto.MotherId,
                 FatherId=studentdto.FatherId,
                 AddressId = studentdto.AddressId,
@@ -40,6 +45,9 @@ namespace Kreta.Shared.Extensions
                 PlaceOfBirth=studentdto.PlaceOfBirth,
                 IsWoman=studentdto.IsWoman,
                 EducationLevel=studentdto.EducationLevel,
+                Mather=studentdto.Mather,
+                Father= studentdto.Father,
+                //Address=studentdto.Address,
 
             };
         }

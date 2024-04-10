@@ -2,7 +2,7 @@
 {
     public class Student : IDbEntity<Student>
     {
-        public Student(Guid id, string firstName, string lastName, DateTime birthsDay, string placeOfBirth,bool isWooman, bool isSchoolDivisionSecretary,Guid educationLevelId, Guid schoolClassId, Guid motherId, Guid fatherId, Guid addressId)
+        public Student(Guid id, string firstName, string lastName, DateTime birthsDay, string placeOfBirth, bool isWooman, bool isSchoolDivisionSecretary, Guid educationLevelId, Guid schoolClassId, Guid motherId, Guid fatherId, Guid addressId)
         {
             Id = id;
             FirstName = firstName;
@@ -12,10 +12,10 @@
             IsWoman = isWooman;
             IsSchoolClassSecretary = isSchoolDivisionSecretary;
             EducationLevelId = educationLevelId;
-            SchoolClassID = schoolClassId;            
+            SchoolClassID = schoolClassId;
             MotherId = motherId;
             FatherId = fatherId;
-            AddressId = addressId;            
+            AddressId = addressId;
         }
 
         public Student()
@@ -25,22 +25,26 @@
             LastName = string.Empty;
             BirthDay = new DateTime();
             PlaceOfBirth = string.Empty;
-            IsWoman = false;            
+            IsWoman = false;
             IsSchoolClassSecretary = false;
-            EducationLevelId= Guid.Empty;
+            EducationLevelId = Guid.Empty;
             SchoolClassID = Guid.Empty;
-            MotherId= Guid.Empty;
-            FatherId= Guid.Empty;
-            AddressId= Guid.Empty;
+            MotherId = Guid.Empty;
+            FatherId = Guid.Empty;
+            AddressId = Guid.Empty;
         }
 
         public Guid Id { get; set; }
         public Guid? EducationLevelId { get; set; }
         public virtual EducationLevel? EducationLevel { get; set; }
         public Guid? SchoolClassID { get; set; }
+        public virtual SchoolClass? SchoolClass { get; set; }
         public Guid? MotherId { get; set; }
+        public virtual Parent? Mather { get; set; }
         public Guid? FatherId { get; set; }
+        public virtual Parent? Father { get; set; }
         public Guid? AddressId { get; set; }
+        //public virtual Address? Address {get; set;}
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDay { get; set; }

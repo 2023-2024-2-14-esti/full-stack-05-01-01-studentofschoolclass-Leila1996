@@ -15,9 +15,11 @@ namespace Kreta.Shared.Extensions
                 YearOfEnrolment= dto.YearOfEnrolment,
                 IsArchived = dto.IsArchived,
                 HeadTeacherId = dto.HeadTeacherId,
+                HeadTeacher= dto.HeadTeacher,
                 TypeOfEducationId = dto.TypeOfEducationId,
                 TypeOfEducation = dto.TypeOfEducation,
-                SchoolClassSubjects = dto.SchoolClassSubjects,
+                SchoolClassSubjects = dto.SchoolClassSubjects,        
+                StudentsOfClass = dto.StudentsOfClass,
             };
         }
 
@@ -31,9 +33,11 @@ namespace Kreta.Shared.Extensions
                 YearOfEnrolment = model.YearOfEnrolment,
                 IsArchived = model.IsArchived,
                 HeadTeacherId=model.HeadTeacherId,
+                HeadTeacher= model.HeadTeacher,
                 TypeOfEducationId = model.TypeOfEducationId,
                 TypeOfEducation= model.TypeOfEducation,
                 SchoolClassSubjects = model.SchoolClassSubjects,
+                StudentsOfClass= model.StudentsOfClass,
             };
         }
     }

@@ -16,6 +16,9 @@ namespace Kreta.Shared.Extensions
                 BirthDay = parent.BirthDay,
                 PlaceOfBirth = parent.PlaceOfBirth,
                 MathersName = parent.MathersName,
+               // StudentOfParent = parent.StudentOfParent,
+                //Address = parent.Address,
+                AddressId = parent.AddressId,
             };
         }
 
@@ -30,6 +33,9 @@ namespace Kreta.Shared.Extensions
                 BirthDay= parentdto.BirthDay,
                 PlaceOfBirth= parentdto.PlaceOfBirth,
                 MathersName= parentdto.MathersName,
+              //  StudentOfParent= parentdto.StudentOfParent,
+                AddressId= parentdto.AddressId,
+              //  Address= parentdto.Address,
             };
         }
     }

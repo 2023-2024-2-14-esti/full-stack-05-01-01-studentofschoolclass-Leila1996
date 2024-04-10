@@ -17,6 +17,12 @@ namespace Kreta.Shared.Extensions
                 Floor = educationLevel.Floor,
                 House = educationLevel.House,
                 PublicScapeID=educationLevel.PublicScapeID,
+                Parent = educationLevel.Parent,
+                Student = educationLevel.Student,
+                Teacher = educationLevel.Teacher,
+                ParentId = educationLevel.ParentId,
+                StudentId = educationLevel.StudentId,
+                TeacherId = educationLevel.TeacherId,
 
             };
         }
@@ -33,6 +39,12 @@ namespace Kreta.Shared.Extensions
                 Floor = model.Floor,
                 House = model.House,
                 PublicScapeID = model.PublicScapeID,
+                Parent = model.Parent,
+                Teacher = model.Teacher,
+                Student= model.Student,
+                ParentId= model.ParentId,
+                TeacherId= model.TeacherId,
+                StudentId= model.StudentId,
             };
         }
     }

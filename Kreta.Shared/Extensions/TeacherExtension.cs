@@ -17,6 +17,8 @@ namespace Kreta.Shared.Extensions
                 PlaceOfBirth = teacher.PlaceOfBirth,
                 IsWoman = teacher.IsWoman,
                 MathersName = teacher.MathersName,
+                HeadTeacherFoClass= teacher.HeadTeacherFoClass,
+                HeadTeacherForShoolClassId=teacher.HeadTeacherForShoolClassId,
             };
         }
 
@@ -32,6 +34,8 @@ namespace Kreta.Shared.Extensions
                 PlaceOfBirth= teacherdto.PlaceOfBirth,
                 IsWoman= teacherdto.IsWoman,
                 MathersName= teacherdto.MathersName,                
+                HeadTeacherFoClass=teacherdto.HeadTeacherFoClass,
+                HeadTeacherForShoolClassId=teacherdto.HeadTeacherForShoolClassId,
             };
         }
     }

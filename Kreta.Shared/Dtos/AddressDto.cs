@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Kreta.Shared.Models.SchoolCitizens;
+using Kreta.Shared.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +18,12 @@ namespace Kreta.Shared.Dtos
         public int Floor { get; set; }
         public int Door { get; set; }
         public int PostalCode { get; set; }
+        public Guid StudentId { get; set; }
+        public Guid TeacherId { get; set; }
+        public Guid ParentId { get; set; }
+        public virtual Student? Student { get; set; }
+        public virtual Teacher? Teacher { get; set; }
+        public virtual Parent? Parent { get; set; }
+
     }
 }

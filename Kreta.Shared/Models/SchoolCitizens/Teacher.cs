@@ -32,7 +32,11 @@
         public string PlaceOfBirth { get; set; }
         public bool IsWoman { get; set; }
         public bool IsHeadTeacher { get;set; }
+        public Guid HeadTeacherForShoolClassId { get; set; }
+        public virtual SchoolClass? HeadTeacherFoClass { get; set; }
         public string MathersName { get; set; }
+        public Guid? AddressId { get; set; }
+        //public virtual Address? Address { get; set; }
         public string HungarianName => $"{LastName} {FirstName}";
         public bool HasId => Id != Guid.Empty;
         public bool IsMan => !IsWoman;

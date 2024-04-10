@@ -1,4 +1,5 @@
 ﻿using Kreta.Shared.Models;
+using Kreta.Shared.Models.SchoolCitizens;
 using Kreta.Shared.Models.SwitchTable;
 
 namespace Kreta.Shared.Dtos
@@ -12,8 +13,10 @@ namespace Kreta.Shared.Dtos
         public Guid? TypeOfEducationId { get; set; }
         public virtual TypeOfEducation? TypeOfEducation { get; set; }
         public Guid? HeadTeacherId { get; set; }
+        public virtual Teacher? HeadTeacher { get; set; }
         public int YearOfEnrolment { get; set; }
         public bool IsArchived { get; set; }
         public ICollection<SchoolClassSubjects>? SchoolClassSubjects { get; set; }
+        public virtual ICollection<Student>? StudentsOfClass { get; set; }
     }
 }

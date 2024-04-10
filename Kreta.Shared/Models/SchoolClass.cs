@@ -1,5 +1,7 @@
 ﻿
+using Kreta.Shared.Models.SchoolCitizens;
 using Kreta.Shared.Models.SwitchTable;
+using System.Collections;
 
 namespace Kreta.Shared.Models
 {
@@ -16,7 +18,7 @@ namespace Kreta.Shared.Models
             HeadTeacherId = Guid.Empty;
         }
 
-        public SchoolClass(Guid id, int schoolYear, SchoolClassType schoolClassType, int yearOfEnrolment, bool isArchived, Guid typeOfEducationId,Guid headTeacherId)
+        public SchoolClass(Guid id, int schoolYear, SchoolClassType schoolClassType, int yearOfEnrolment, bool isArchived, Guid typeOfEducationId, Guid headTeacherId)
         {
             Id = id;
             SchoolYear = schoolYear;
@@ -34,9 +36,11 @@ namespace Kreta.Shared.Models
         public Guid? TypeOfEducationId { get; set; }
         public virtual TypeOfEducation? TypeOfEducation { get; set; }
         public Guid? HeadTeacherId { get; set; }
+        public virtual Teacher? HeadTeacher {get;set;}
         public int YearOfEnrolment {  get; set; }
         public bool IsArchived { get; set; }
         public virtual ICollection<SchoolClassSubjects>? SchoolClassSubjects { get; set; }
+        public virtual ICollection<Student>? StudentsOfClass { get; set; }
         public string SchoolClassTypeName
         {
             get

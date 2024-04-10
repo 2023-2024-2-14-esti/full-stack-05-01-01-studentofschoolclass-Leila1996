@@ -1,4 +1,6 @@
-﻿namespace Kreta.Shared.Dtos
+﻿using Kreta.Shared.Models;
+
+namespace Kreta.Shared.Dtos
 {
     public class TeacherDto
     {
@@ -9,7 +11,11 @@
         public string PlaceOfBirth { get; set; } = string.Empty;
         public bool IsWoman { get; set; }
         public bool IsHeadTeacher { get; set; }
+        public Guid HeadTeacherForShoolClassId { get; set; }
+        public virtual SchoolClass? HeadTeacherFoClass { get; set; }
         public string MathersName { get; set; } = string.Empty;
+        public Guid? AddressId { get; set; }
+        public virtual Address? Address { get; set; }
 
     }
 }

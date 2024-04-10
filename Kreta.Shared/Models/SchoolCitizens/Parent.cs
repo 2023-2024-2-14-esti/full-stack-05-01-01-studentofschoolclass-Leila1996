@@ -5,8 +5,8 @@
         public Parent()
         {
             Id = Guid.Empty;
-            FirstName = string.Empty;
             LastName = string.Empty;
+            FirstName = string.Empty;
             IsWoman = false;
             BirthDay = DateTime.MinValue;
             PlaceOfBirth = string.Empty;
@@ -27,9 +27,13 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool IsWoman { get; set; }
+        public Guid StudentOfParentId { get; set; }
+        //public virtual Student? StudentOfParent { get; set; }
         public DateTime BirthDay { get; set; }
         public string PlaceOfBirth { get; set; }
         public string MathersName { get; set; }
+        public Guid? AddressId { get; set; }
+        //public virtual Address? Address { get; set; }
         public string HungarianName => $"{LastName} {FirstName}";
         public bool HasId => Id != Guid.Empty;
         public bool IsMan => !IsWoman;

@@ -9,10 +9,62 @@ namespace Kreta.Backend.Context
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
+            //ID-s
+            #region Id-s
             Guid publicSpaceId1 = Guid.NewGuid();
             Guid publicSpaceId2 = Guid.NewGuid();
             Guid publicSpaceId3 = Guid.NewGuid();
 
+            Guid schoolClassId1 = Guid.NewGuid();
+            Guid schoolClassId2 = Guid.NewGuid();
+            Guid schoolClassId3 = Guid.NewGuid();
+
+            Guid teacherId1 = Guid.NewGuid();
+            Guid teacherId2 = Guid.NewGuid();
+            Guid teacherId3 = Guid.NewGuid();
+            Guid teacherId4 = Guid.NewGuid();
+            Guid teacherId5 = Guid.NewGuid();
+
+            Guid addressId1 = Guid.NewGuid();
+            Guid addressId2 = Guid.NewGuid();
+            Guid addressId3 = Guid.NewGuid();
+            Guid addressId4 = Guid.NewGuid();
+            Guid addressId5 = Guid.NewGuid();
+            Guid addressId6 = Guid.NewGuid();
+
+            Guid typeOfSubject1 = Guid.NewGuid();
+            Guid typeOfSubject2 = Guid.NewGuid();
+            Guid typeOfSubject3 = Guid.NewGuid();
+
+            Guid subjectId1 = Guid.NewGuid();
+            Guid subjectId2 = Guid.NewGuid();
+            Guid subjectId3 = Guid.NewGuid();
+
+            Guid typeOfEducation1 = Guid.NewGuid();
+            Guid typeOfEducation2 = Guid.NewGuid();
+            Guid typeOfEducation3 = Guid.NewGuid();
+
+            Guid EducationLevelId1 = Guid.NewGuid();
+            Guid EducationLevelId2 = Guid.NewGuid();
+
+            Guid parentId1 = Guid.NewGuid();
+            Guid parentId2 = Guid.NewGuid();
+            Guid parentId3 = Guid.NewGuid();
+            Guid parentId4 = Guid.NewGuid();
+            Guid parentId5 = Guid.NewGuid();
+            Guid parentId6 = Guid.NewGuid();
+
+            Guid studentId1 = Guid.NewGuid();
+            Guid studentId2 = Guid.NewGuid();
+            Guid studentId3 = Guid.NewGuid();
+            Guid studentId4 = Guid.NewGuid();
+            Guid studentId5 = Guid.NewGuid();
+            Guid studentId6 = Guid.NewGuid();
+            Guid studentId7 = Guid.NewGuid();
+            #endregion
+
+            // Table
+            #region Public space
             List<PublicSpace> publicSpaces = new List<PublicSpace>()
             {
                 new PublicSpace()
@@ -31,10 +83,8 @@ namespace Kreta.Backend.Context
                     NameOfPublicSpace="sugárút",
                 },
             };
-
-            Guid addressId1= Guid.NewGuid();
-            Guid addressId2 = Guid.NewGuid();
-            Guid addressId3 = Guid.NewGuid();
+            #endregion
+            #region Address
             List<Address> addresses = new List<Address> 
             { 
                 new Address
@@ -60,17 +110,41 @@ namespace Kreta.Backend.Context
                     Id = addressId3,
                     City="Szeged",
                     PublicSpaceName="Boldogasszony",
-                    House=85,
+                    House=22,
                     PostalCode=6722,
                     PublicScapeID=publicSpaceId3,
                 },
+                new Address
+                {
+                    Id = addressId4,
+                    City="Szeged",
+                    PublicSpaceName="Zászló",
+                    House=56,
+                    PostalCode=6722,
+                    PublicScapeID=publicSpaceId1,
+                },
+                new Address
+                {
+                    Id = addressId5,
+                    City="Szeged",
+                    PublicSpaceName="Kossuth Lajos",
+                    House=2,
+                    PostalCode=6724,
+                    PublicScapeID=publicSpaceId3,
+                },
+                new Address
+                {
+                    Id = addressId6,
+                    City="Szeged",
+                    PublicSpaceName="Bokor",
+                    House=45,
+                    PostalCode=6722,
+                    PublicScapeID=publicSpaceId1,
+                },
 
             };
-
-            Guid typeOfSubject1 = Guid.NewGuid();
-            Guid typeOfSubject2 = Guid.NewGuid();
-            Guid typeOfSubject3 = Guid.NewGuid();
-
+            #endregion
+            #region Subject type
             List<SubjectType> subjectTypes = new List<SubjectType>
             {
                 new SubjectType
@@ -89,11 +163,8 @@ namespace Kreta.Backend.Context
                     SubjectTypeName="Közgazdaságtan",
                 },
             };
-
-            Guid subjectId1 = Guid.NewGuid();
-            Guid subjectId2 = Guid.NewGuid();
-            Guid subjectId3 = Guid.NewGuid();
-
+            #endregion
+            #region Subject
             List<Subject> subjects = new List<Subject>
             {
                 new Subject
@@ -124,11 +195,8 @@ namespace Kreta.Backend.Context
                     OptionalExaminationSubject=false,
                 }
             };
-
-            Guid typeOfEducation1= Guid.NewGuid();
-            Guid typeOfEducation2 = Guid.NewGuid();
-            Guid typeOfEducation3 = Guid.NewGuid();
-
+            #endregion
+            #region Type of education
             List<TypeOfEducation> typeOfEducations= new ()
             {
                 new TypeOfEducation
@@ -147,9 +215,8 @@ namespace Kreta.Backend.Context
                     EducationName="Vállalkozási ügyviteli ügyintéző"
                 }
             };
-
-            Guid EducationLevelId1 = Guid.NewGuid();
-            Guid EducationLevelId2 = Guid.NewGuid();
+            #endregion
+            #region EducationLevel
             List<EducationLevel> educationLevels = new()
             {
                 new EducationLevel
@@ -165,13 +232,8 @@ namespace Kreta.Backend.Context
                     DurationOfEducation=2,
                 }
             };
-            
-            Guid parentId1=Guid.NewGuid();
-            Guid parentId2 = Guid.NewGuid();
-            Guid parentId3 = Guid.NewGuid();
-            Guid parentId4 = Guid.NewGuid();
-            Guid parentId5 = Guid.NewGuid();
-            Guid parentId6 = Guid.NewGuid();
+            #endregion
+            #region Parent
             List<Parent> parents = new()
             {
                 new Parent
@@ -183,6 +245,8 @@ namespace Kreta.Backend.Context
                     BirthDay=new DateTime(1998,8,8),
                     PlaceOfBirth="Szeged",
                     MathersName="Érc Kitti",
+                    StudentOfParentId=studentId1,
+                    AddressId=addressId1,
                 },
                 new Parent
                 {
@@ -204,6 +268,8 @@ namespace Kreta.Backend.Context
                     BirthDay=new DateTime(1995,5,5),
                     PlaceOfBirth="Szeged",
                     MathersName="Adakozó Andor",
+                    StudentOfParentId=studentId1,
+                    AddressId=addressId2,
 
                 },
                 new Parent
@@ -215,6 +281,7 @@ namespace Kreta.Backend.Context
                     BirthDay=new DateTime(1994,4,4),
                     PlaceOfBirth="Makó",
                     MathersName="Adó Anna",
+                    StudentOfParentId=studentId4,
 
                 },
                 new Parent
@@ -226,6 +293,7 @@ namespace Kreta.Backend.Context
                     BirthDay=new DateTime(1992,2,2),
                     PlaceOfBirth="Szeged",
                     MathersName="Alacsony Anikó",
+                    StudentOfParentId=studentId7,
 
                 },
                 new Parent
@@ -237,58 +305,65 @@ namespace Kreta.Backend.Context
                     BirthDay=new DateTime(1992,2,2),
                     PlaceOfBirth="Deszk",
                     MathersName="Alacsony Anikó",
-
+                    StudentOfParentId=studentId7,
                 }
             };
-
-
+            #endregion
+            #region Student
             List<Student> students = new()
             {
                 new Student
                 {
-                    Id=Guid.NewGuid(),
+                    Id=studentId1,
                     FirstName="János",
                     LastName="Jegy",
                     IsWoman=false,
                     BirthDay=new DateTime(2022,10,10),
                     PlaceOfBirth="Szeged",
                     EducationLevelId=EducationLevelId1,
-                    MotherId=parentId2,
+                    MotherId=parentId1,
+                    FatherId=parentId3,
                     AddressId=addressId1,
+                    SchoolClassID=schoolClassId1
                 },
                 new Student
                 {
-                    Id=Guid.NewGuid(),
+                    Id=studentId2,
                     FirstName="Nóra",
                     LastName="Nagy",
                     IsWoman=true,
                     BirthDay=new DateTime(2021,4,4),
                     PlaceOfBirth="Kiskunhalas",
                     EducationLevelId=EducationLevelId2,
+                    SchoolClassID=schoolClassId1,
+                    AddressId=addressId3,
                 },
                 new Student
                 {
-                    Id=Guid.NewGuid(),
+                    Id=studentId3,
                     FirstName="Valér",
                     LastName="Vas",
                     IsWoman=false,
                     BirthDay=new DateTime(2022,7,7),
                     PlaceOfBirth="Makó",
                     EducationLevelId=EducationLevelId1,
+                    SchoolClassID=schoolClassId1,
                 },
                 new Student
                 {
-                    Id=Guid.NewGuid(),
+                    Id=studentId4,
                     FirstName="Márta",
                     LastName="Kis",
                     PlaceOfBirth="Szabadka",
                     IsWoman=true,
                     BirthDay=new DateTime(2019,9,9),
                     EducationLevelId=EducationLevelId1,
+                    SchoolClassID=schoolClassId2,
+                    MotherId=parentId4,
                 },
                 new Student
                 {
-                    Id=Guid.NewGuid(),
+                    Id=studentId5,
                     FirstName="Milán",
                     LastName="Magas",
                     IsWoman=false,
@@ -296,38 +371,36 @@ namespace Kreta.Backend.Context
                     PlaceOfBirth="Apátfalva",
                     EducationLevelId=EducationLevelId2,
                     MotherId=parentId1,                    
-
+                    SchoolClassID=schoolClassId2,
+                    AddressId=addressId4,
                 },
                 new Student
                 {
-                    Id=Guid.NewGuid(),
+                    Id=studentId6,
                     FirstName="Fruzsina",
                     LastName="Fukar",
                     IsWoman=false,
                     BirthDay=new DateTime(2019,9,9),
                     PlaceOfBirth="Miskolc",
                     EducationLevelId=EducationLevelId2,
-                    MotherId=parentId4,
-                    FatherId=parentId3,
+                    SchoolClassID=schoolClassId2
                 },
                 new Student
                 {
-                    Id=Guid.NewGuid(),
+                    Id=studentId7,
                     FirstName="Kinga",
                     LastName="Kilógó",
                     IsWoman=false,
                     BirthDay=new DateTime(2019,9,9),
                     PlaceOfBirth="Miskolc",
                     EducationLevelId=Guid.Empty,
-                    MotherId=parentId4,
-                    FatherId=parentId3,
+                    MotherId=parentId5,
+                    FatherId=parentId6,
+                    SchoolClassID=schoolClassId3,
                 }
             };
-            Guid teacherId1= Guid.NewGuid();
-            Guid teacherId2 = Guid.NewGuid();
-            Guid teacherId3 = Guid.NewGuid();
-            Guid teacherId4 = Guid.NewGuid();
-            Guid teacherId5 = Guid.NewGuid();
+            #endregion
+            #region Teacher
             List<Teacher> teachers = new()
             {
                 new Teacher
@@ -336,10 +409,12 @@ namespace Kreta.Backend.Context
                     FirstName="Martin",
                     LastName="Magyar",
                     BirthDay=new DateTime(2000,10,10),
-                    IsHeadTeacher=false,
+                    IsHeadTeacher=true,
+                    HeadTeacherForShoolClassId=schoolClassId1,
                     PlaceOfBirth="Miskolc",
                     IsWoman=false,
                     MathersName="Miskolci Mária"
+                    
                 },
                 new Teacher
                 {
@@ -348,6 +423,7 @@ namespace Kreta.Backend.Context
                     LastName="Metek",
                     BirthDay=new DateTime(2000,11,11),
                     IsHeadTeacher=true,
+                    HeadTeacherForShoolClassId=schoolClassId2,
                     PlaceOfBirth="Eger",
                     IsWoman=true,
                     MathersName="Egri Etelka"
@@ -360,9 +436,11 @@ namespace Kreta.Backend.Context
                     LastName="Földrajz",
                     BirthDay=new DateTime(2000,12,12),
                     IsHeadTeacher=true,
+                    HeadTeacherForShoolClassId=schoolClassId3,
                     PlaceOfBirth="Szabadka",
                     IsWoman=false,
-                    MathersName="Szabadkai Szabina"
+                    MathersName="Szabadkai Szabina",
+                    AddressId=addressId5,
 
                 },
                 new Teacher
@@ -385,13 +463,12 @@ namespace Kreta.Backend.Context
                     IsHeadTeacher=false,
                     PlaceOfBirth="Kecskemét",
                     IsWoman=false,
-                    MathersName="Kecskeméti Kati"
+                    MathersName="Kecskeméti Kati",
+                    AddressId=addressId6,
                 }
             };
-
-            Guid schoolClassId1 = Guid.NewGuid();
-            Guid schoolClassId2 = Guid.NewGuid();
-            Guid schoolClassId3 = Guid.NewGuid();
+            #endregion
+            #region School class
             List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
                 new SchoolClass
@@ -402,7 +479,7 @@ namespace Kreta.Backend.Context
                     YearOfEnrolment=2025,
                     IsArchived=false,
                     TypeOfEducationId=typeOfEducation1,
-                    HeadTeacherId=teacherId2,
+                    HeadTeacherId=teacherId1,
                 },
                 new SchoolClass
                 {
@@ -412,18 +489,23 @@ namespace Kreta.Backend.Context
                     YearOfEnrolment=2024,
                     IsArchived=false,
                     TypeOfEducationId=typeOfEducation2,
+                    HeadTeacherId=teacherId2,
                 },
                 new SchoolClass
                 {
                     Id=schoolClassId3,
                     SchoolYear=14,
                     SchoolClassType=SchoolClassType.ClassB,
-                    YearOfEnrolment=2024,
+                    YearOfEnrolment=2024,                    
                     IsArchived=false,
                     TypeOfEducationId=typeOfEducation3,
+                    HeadTeacherId=teacherId3,
                 },
             };
+            #endregion
 
+            //Switch table
+            #region School class subjects
             List<SchoolClassSubjects> schoolClassSubjects = new List<SchoolClassSubjects>
             {
                 new SchoolClassSubjects
@@ -475,6 +557,7 @@ namespace Kreta.Backend.Context
                     IsTheHoursInOne=false,
                 }
             };
+            #endregion
 
             modelBuilder.Entity<EducationLevel>().HasData(educationLevels);
             modelBuilder.Entity<TypeOfEducation>().HasData(typeOfEducations);
