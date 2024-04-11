@@ -2,7 +2,6 @@
 using Kreta.Shared.Assamblers;
 using Kreta.Shared.Dtos;
 using Kreta.Shared.Extensions;
-using Kreta.Shared.Models.SchoolCitizens;
 using Kreta.Shared.Models.SwitchTable;
 using Kreta.Shared.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +14,7 @@ namespace Kreta.Backend.Controllers
     public class SchoolClassSubjectsController : BaseController<SchoolClassSubjects, SchoolClassSubjectsDto>
     {
         private readonly ISchoolClassSubjectsRepo schoolClassSubjectRepo;
-        public SchoolClassSubjectsController(SchoolClassSubjectsAssambler assambler, ISchoolClassSubjectsRepo repo) : base(assambler, repo)
+        public SchoolClassSubjectsController( SchoolClassSubjectsAssambler assambler, ISchoolClassSubjectsRepo repo) : base(assambler, repo)
         {
             schoolClassSubjectRepo = repo;
         }

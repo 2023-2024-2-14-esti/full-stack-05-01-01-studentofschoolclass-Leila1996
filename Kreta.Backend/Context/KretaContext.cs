@@ -19,6 +19,8 @@ namespace Kreta.Backend.Context
         public DbSet<Address> Addresss { get; set; }
         public DbSet<PublicSpace> PublicSpaces { get; set; }
         public DbSet<TeachersTeachInSchoolClass> TeacherTeachInSchoolClass { get; set; }
+        public DbSet<SchoolClassStudents> SchoolClassStudents { get; set; }
+        public DbSet<SchoolClassSubjects> SchoolClassSubjects { get; set; }
         public KretaContext(DbContextOptions options) : base(options)
         {
         }
@@ -106,6 +108,7 @@ namespace Kreta.Backend.Context
                 .WithMany(schoolClass => schoolClass.TeacherWhoTeachInSchoolClass)
                 .HasForeignKey(teacherWhoTeachInSchoolClass => teacherWhoTeachInSchoolClass.SchoolClassId)
                 .IsRequired(false);
+            // N:M 
 
         }
     }
