@@ -602,6 +602,7 @@ namespace Kreta.Backend.Context
             modelBuilder.Entity<Subject>().HasData(subjects);
             modelBuilder.Entity<PublicSpace>().HasData(publicSpaces);
             modelBuilder.Entity<SchoolClassSubjects>().HasData(schoolClassSubjects);
+            modelBuilder.Entity<TeachersTeachInSchoolClass>().HasData(teachersTeachInSchoolClasses);
         }
     }
 }
