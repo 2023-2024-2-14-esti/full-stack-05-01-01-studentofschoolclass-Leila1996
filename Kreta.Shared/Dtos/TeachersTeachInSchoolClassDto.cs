@@ -3,7 +3,7 @@ using Kreta.Shared.Models;
 
 namespace Kreta.Shared.Dtos
 {
-    public class TeacherTeachInSchoolClassDto
+    public class TeachersTeachInSchoolClassDto
     {
         public Guid Id { get; set; }
         public Guid TeacherId { get; set; }

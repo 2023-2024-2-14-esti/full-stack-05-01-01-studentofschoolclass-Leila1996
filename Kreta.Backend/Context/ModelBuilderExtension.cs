@@ -558,6 +558,37 @@ namespace Kreta.Backend.Context
                 }
             };
             #endregion
+            #region Teacher teach in school class
+            List<TeachersTeachInSchoolClass> teachersTeachInSchoolClasses = new List<TeachersTeachInSchoolClass>
+            {
+                new TeachersTeachInSchoolClass
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolClassId = schoolClassId2,
+                    TeacherId = teacherId5,
+                    IsTheHoursInOne = false,
+                    NumberOfHours=3,
+                },
+                new TeachersTeachInSchoolClass
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolClassId = schoolClassId1,
+                    TeacherId = teacherId5,
+                    IsTheHoursInOne = false,
+                    NumberOfHours=2,
+                },
+                new TeachersTeachInSchoolClass
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolClassId = schoolClassId2,
+                    TeacherId = teacherId4,
+                    IsTheHoursInOne = true,
+                    NumberOfHours=3,
+                },
+
+            };
+
+            #endregion
 
             modelBuilder.Entity<EducationLevel>().HasData(educationLevels);
             modelBuilder.Entity<TypeOfEducation>().HasData(typeOfEducations);

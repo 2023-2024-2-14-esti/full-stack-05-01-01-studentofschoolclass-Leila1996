@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Kreta.Shared.Extensions
 {
-    public static class TeacherTeachInSchoolClassExtension
+    public static class TeachersTeachInSchoolClassExtension
     {
-        public static TeacherTeachInSchoolClassDto ToDto(this TeacherTeachInSchoolClass model)
+        public static TeachersTeachInSchoolClassDto ToDto(this TeachersTeachInSchoolClass model)
         {
-            return new TeacherTeachInSchoolClassDto
+            return new TeachersTeachInSchoolClassDto
             {
                 Id = model.Id,
                 TeacherId = model.TeacherId,
@@ -23,9 +23,9 @@ namespace Kreta.Shared.Extensions
             };               
         }
 
-        public static TeacherTeachInSchoolClass ToModel(this TeacherTeachInSchoolClassDto dto)
+        public static TeachersTeachInSchoolClass ToModel(this TeachersTeachInSchoolClassDto dto)
         {
-            return new TeacherTeachInSchoolClass
+            return new TeachersTeachInSchoolClass
             {
                 Id = dto.Id,
                 TeacherId = dto.TeacherId,

@@ -18,5 +18,6 @@ namespace Kreta.Shared.Dtos
         public bool IsArchived { get; set; }
         public ICollection<SchoolClassSubjects>? SchoolClassSubjects { get; set; }
         public virtual ICollection<Student>? StudentsOfClass { get; set; }
+        public virtual ICollection<TeachersTeachInSchoolClass>? TeacherWhoTeachInSchoolClass { get; set; }
     }
 }

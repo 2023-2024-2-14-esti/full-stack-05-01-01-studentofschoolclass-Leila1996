@@ -1,4 +1,6 @@
-﻿namespace Kreta.Shared.Models.SchoolCitizens
+﻿using Kreta.Shared.Models.SwitchTable;
+
+namespace Kreta.Shared.Models.SchoolCitizens
 {
     public class Teacher : IDbEntity<Teacher>
     {
@@ -35,8 +37,10 @@
         public Guid HeadTeacherForShoolClassId { get; set; }
         public virtual SchoolClass? HeadTeacherFoClass { get; set; }
         public string MathersName { get; set; }
-        public Guid? AddressId { get; set; }
+        public Guid? AddressId { get; set; }      
         //public virtual Address? Address { get; set; }
+        public virtual ICollection<TeachersTeachInSchoolClass>? SchoolClassWhereTeacherTeach { get; set; }
+
         public string HungarianName => $"{LastName} {FirstName}";
         public bool HasId => Id != Guid.Empty;
         public bool IsMan => !IsWoman;

@@ -2,9 +2,9 @@
 
 namespace Kreta.Shared.Models.SwitchTable
 {
-    public class TeacherTeachInSchoolClass : IDbEntity<TeacherTeachInSchoolClass>
+    public class TeachersTeachInSchoolClass : IDbEntity<TeachersTeachInSchoolClass>
     {
-        public TeacherTeachInSchoolClass(Guid id, Guid teacherId, Guid schoolClassId, int numberOfHours, bool isTheHoursInOne)
+        public TeachersTeachInSchoolClass(Guid id, Guid teacherId, Guid schoolClassId, int numberOfHours, bool isTheHoursInOne)
         {
             Id = id;
             TeacherId = teacherId;
@@ -13,7 +13,7 @@ namespace Kreta.Shared.Models.SwitchTable
             IsTheHoursInOne = isTheHoursInOne;
         }
 
-        public TeacherTeachInSchoolClass()
+        public TeachersTeachInSchoolClass()
         {
             Id = Guid.Empty;
             TeacherId = Guid.Empty;

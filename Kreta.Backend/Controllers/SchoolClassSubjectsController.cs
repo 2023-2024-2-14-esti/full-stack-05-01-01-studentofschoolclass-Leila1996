@@ -23,7 +23,6 @@ namespace Kreta.Backend.Controllers
         [HttpGet("included")]
         public async Task<IActionResult> SelectAllIncludedAsync()
         {
-            List<Student>? students = new();
             if (schoolClassSubjectRepo != null)
             {
                 try

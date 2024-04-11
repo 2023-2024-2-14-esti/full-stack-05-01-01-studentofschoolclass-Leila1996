@@ -18,6 +18,7 @@ namespace Kreta.Backend.Context
         public DbSet<SubjectType> SubjectTypes { get; set; }    
         public DbSet<Address> Addresss { get; set; }
         public DbSet<PublicSpace> PublicSpaces { get; set; }
+        public DbSet<TeachersTeachInSchoolClass> TeacherTeachInSchoolClass { get; set; }
         public KretaContext(DbContextOptions options) : base(options)
         {
         }
@@ -48,11 +49,11 @@ namespace Kreta.Backend.Context
             //modelBuilder.Entity<Student>().HasOne(student => student.Father);
 
             // 1:1 Address - Teacher,Parent,Student 
-            /*modelBuilder.Entity<Address>()
-                .HasOne(address => address.Teacher)
-                .WithOne(teacher => teacher.Address);
+            //modelBuilder.Entity<Address>()
+            //    .HasOne(address => address.Teacher)
+            //    .WithOne(teacher => teacher.Address);
             //.HasForeignKey<Teacher>(teacher => teacher.AddressId);
-                         * modelBuilder.Entity<Address>()
+            /* modelBuilder.Entity<Address>()
                 .HasOne(address => address.Parent)
                 .WithOne(parent => parent.Address);
             //.HasForeignKey<Teacher>(parent => parent.AddressId);
@@ -94,6 +95,18 @@ namespace Kreta.Backend.Context
                 .WithMany(schoolClass => schoolClass.SchoolClassSubjects)
                 .HasForeignKey(schoolClassSubjects => schoolClassSubjects.SubjectId)
                 .IsRequired(false);
+            // N:M TeacherTeachInSchoolClass
+            modelBuilder.Entity<TeachersTeachInSchoolClass>()
+                .HasOne(teacherWhoTeachInSchoolClass => teacherWhoTeachInSchoolClass.TeacherTeachInScoolClass)
+                .WithMany(schoolClass => schoolClass.SchoolClassWhereTeacherTeach)
+                .HasForeignKey(teacherWhoTeachInSchoolClass => teacherWhoTeachInSchoolClass.TeacherId)
+                .IsRequired(false);
+            modelBuilder.Entity<TeachersTeachInSchoolClass>()
+                .HasOne(teacherWhoTeachInSchoolClass => teacherWhoTeachInSchoolClass.SchoolClassWhoTeacherTeach)
+                .WithMany(schoolClass => schoolClass.TeacherWhoTeachInSchoolClass)
+                .HasForeignKey(teacherWhoTeachInSchoolClass => teacherWhoTeachInSchoolClass.SchoolClassId)
+                .IsRequired(false);
+
         }
     }
 }

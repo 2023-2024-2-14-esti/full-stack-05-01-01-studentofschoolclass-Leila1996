@@ -1,4 +1,5 @@
 ﻿using Kreta.Shared.Models;
+using Kreta.Shared.Models.SwitchTable;
 
 namespace Kreta.Shared.Dtos
 {
@@ -15,7 +16,8 @@ namespace Kreta.Shared.Dtos
         public virtual SchoolClass? HeadTeacherFoClass { get; set; }
         public string MathersName { get; set; } = string.Empty;
         public Guid? AddressId { get; set; }
-        public virtual Address? Address { get; set; }
+        //public virtual Address? Address { get; set; }
+        public virtual ICollection<TeachersTeachInSchoolClass>? SchoolClassWhereTeacherTeach { get; set; }
 
     }
 }

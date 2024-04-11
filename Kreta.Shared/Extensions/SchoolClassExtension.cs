@@ -20,6 +20,7 @@ namespace Kreta.Shared.Extensions
                 TypeOfEducation = dto.TypeOfEducation,
                 SchoolClassSubjects = dto.SchoolClassSubjects,        
                 StudentsOfClass = dto.StudentsOfClass,
+                TeacherWhoTeachInSchoolClass = dto.TeacherWhoTeachInSchoolClass,
             };
         }
 
@@ -38,6 +39,7 @@ namespace Kreta.Shared.Extensions
                 TypeOfEducation= model.TypeOfEducation,
                 SchoolClassSubjects = model.SchoolClassSubjects,
                 StudentsOfClass= model.StudentsOfClass,
+                TeacherWhoTeachInSchoolClass=model.TeacherWhoTeachInSchoolClass
             };
         }
     }
