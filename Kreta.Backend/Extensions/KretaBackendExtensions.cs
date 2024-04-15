@@ -28,9 +28,6 @@ namespace Kreta.Backend.Extensions
         public static void ConfigureInMemoryContext(this IServiceCollection services)
         {
             string dbName = "Kreta" + Guid.NewGuid();
-            services.AddDbContext<KretaContext>(
-                  options => options.UseInMemoryDatabase(databaseName: dbName)
-            );
             services.AddDbContext<KretaInMemoryContext>(
                 options => options.UseInMemoryDatabase(databaseName: dbName)
             );
@@ -52,8 +49,7 @@ namespace Kreta.Backend.Extensions
 
             services.AddScoped<ISchoolClassStudentsRepo,SchoolClassStudentsRepo<KretaInMemoryContext>>();
             services.AddScoped<ISchoolClassSubjectsRepo, SchoolClassSubjectsRepo<KretaInMemoryContext>>();
-            services.AddScoped<ITeacherTeachInSchoolClass,TeacherTeachInSchoolClassRepo<KretaInMemoryContext>>();
-            
+            services.AddScoped<ITeacherTeachInSchoolClass,TeacherTeachInSchoolClassRepo<KretaInMemoryContext>>();            
 
             services.AddScoped<IRepositoryManager, RepositoryManager>();
         }

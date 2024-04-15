@@ -85,15 +85,15 @@ namespace Kreta.Backend.Context
             };
             #endregion
             #region Address
-            List<Address> addresses = new List<Address> 
-            { 
+            List<Address> addresses = new List<Address>
+            {
                 new Address
                 {
                     Id = addressId1,
                     City="Szeged",
                     PublicSpaceName="Szentháromság",
                     House=10,
-                    PostalCode=6722,    
+                    PostalCode=6722,
                     PublicScapeID=publicSpaceId1,
                 },
                 new Address
@@ -150,7 +150,7 @@ namespace Kreta.Backend.Context
                 new SubjectType
                 {
                     Id = typeOfSubject1,
-                    SubjectTypeName="Természettudomány",                   
+                    SubjectTypeName="Természettudomány",
                 },
                 new SubjectType
                 {
@@ -197,15 +197,15 @@ namespace Kreta.Backend.Context
             };
             #endregion
             #region Type of education
-            List<TypeOfEducation> typeOfEducations= new ()
+            List<TypeOfEducation> typeOfEducations = new()
             {
                 new TypeOfEducation
                 {
                     Id = typeOfEducation1,
                     EducationName="Szoftverfejlesztő és -tesztelő"
                 },
-                new TypeOfEducation 
-                { 
+                new TypeOfEducation
+                {
                     Id = typeOfEducation2,
                     EducationName="Idegen nyelvű ipari és kereskedelmi technikus"
                 },
@@ -223,7 +223,7 @@ namespace Kreta.Backend.Context
                 {
                     Id=EducationLevelId1,
                     StudentEducationLevel="érettségi",
-                    DurationOfEducation=4,                   
+                    DurationOfEducation=4,
                 },
                 new EducationLevel
                 {
@@ -337,6 +337,8 @@ namespace Kreta.Backend.Context
                     EducationLevelId=EducationLevelId2,
                     SchoolClassID=schoolClassId1,
                     AddressId=addressId3,
+                    MotherId=null,
+                    FatherId=null,
                 },
                 new Student
                 {
@@ -348,6 +350,8 @@ namespace Kreta.Backend.Context
                     PlaceOfBirth="Makó",
                     EducationLevelId=EducationLevelId1,
                     SchoolClassID=schoolClassId1,
+                    MotherId=null,
+                    FatherId=null,
                 },
                 new Student
                 {
@@ -360,6 +364,7 @@ namespace Kreta.Backend.Context
                     EducationLevelId=EducationLevelId1,
                     SchoolClassID=schoolClassId2,
                     MotherId=parentId4,
+                    FatherId=null,
                 },
                 new Student
                 {
@@ -370,7 +375,8 @@ namespace Kreta.Backend.Context
                     BirthDay=new DateTime(2017,7,7),
                     PlaceOfBirth="Apátfalva",
                     EducationLevelId=EducationLevelId2,
-                    MotherId=parentId1,                    
+                    MotherId=parentId1,
+                    FatherId=null,
                     SchoolClassID=schoolClassId2,
                     AddressId=addressId4,
                 },
@@ -383,7 +389,9 @@ namespace Kreta.Backend.Context
                     BirthDay=new DateTime(2019,9,9),
                     PlaceOfBirth="Miskolc",
                     EducationLevelId=EducationLevelId2,
-                    SchoolClassID=schoolClassId2
+                    SchoolClassID=schoolClassId2,
+                    MotherId=null,
+                    FatherId=null,
                 },
                 new Student
                 {
@@ -393,10 +401,10 @@ namespace Kreta.Backend.Context
                     IsWoman=false,
                     BirthDay=new DateTime(2019,9,9),
                     PlaceOfBirth="Miskolc",
-                    EducationLevelId=Guid.Empty,
                     MotherId=parentId5,
                     FatherId=parentId6,
                     SchoolClassID=schoolClassId3,
+                    EducationLevelId=null,
                 }
             };
             #endregion
@@ -414,7 +422,7 @@ namespace Kreta.Backend.Context
                     PlaceOfBirth="Miskolc",
                     IsWoman=false,
                     MathersName="Miskolci Mária"
-                    
+
                 },
                 new Teacher
                 {
@@ -496,7 +504,7 @@ namespace Kreta.Backend.Context
                     Id=schoolClassId3,
                     SchoolYear=14,
                     SchoolClassType=SchoolClassType.ClassB,
-                    YearOfEnrolment=2024,                    
+                    YearOfEnrolment=2024,
                     IsArchived=false,
                     TypeOfEducationId=typeOfEducation3,
                     HeadTeacherId=teacherId3,
