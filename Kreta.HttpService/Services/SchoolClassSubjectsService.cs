@@ -14,9 +14,9 @@ using System.Threading.Tasks;
 
 namespace Kreta.HttpService.Services
 {
-    public class SchoolClassSubjectsService : BaseService<SchoolClassSubjects, SchoolClassStudentsDto>, ISchoolClassSubjectsService
+    public class SchoolClassSubjectsService : BaseService<SchoolClassSubjects, SchoolClassSubjectsDto>, ISchoolClassSubjectsService
     {
-        public SchoolClassSubjectsService(IHttpClientFactory? httpClientFactory,SchoolClassSubjectsAssambler assambler) : base(httpClientFactory, assambler)
+        public SchoolClassSubjectsService(IHttpClientFactory? httpClientFactory, SchoolClassSubjectsAssambler assambler) : base(httpClientFactory, assambler)
         {
         }
 
@@ -27,7 +27,7 @@ namespace Kreta.HttpService.Services
                 try
                 {
 
-                    List<SchoolClassStudentsDto>? resultDto = await _httpClient.GetFromJsonAsync<List<SchoolClassStudentsDto>>($"api/SchoolClassSubjects/included");
+                    List<SchoolClassSubjectsDto>? resultDto = await _httpClient.GetFromJsonAsync<List<SchoolClassSubjectsDto>>($"api/SchoolClassSubjects/included");
                     if (resultDto is not null)
                     {
                         List<SchoolClassSubjects> result = resultDto.Select(entity => _assambler.ToModel(entity)).ToList();
