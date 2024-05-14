@@ -48,6 +48,7 @@ namespace Kreta.Desktop.Extensions
             services.AddScoped<SchoolClassAssambler>();
             services.AddScoped<TypeOfEducationAssambler>();
             services.AddScoped<EducationLevelAssambler>();
+            services.AddScoped<HeadTeacherAssambler>();
 
             services.AddScoped<SchoolClassSubjectsAssambler>();
         }

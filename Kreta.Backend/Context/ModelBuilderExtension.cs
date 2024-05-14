@@ -76,6 +76,12 @@ namespace Kreta.Backend.Context
             Guid studentId8 = Guid.NewGuid();
             Guid studentId9 = Guid.NewGuid();
             Guid studentId10 = Guid.NewGuid();
+
+            Guid headTeacherId1= Guid.NewGuid();
+            Guid headTeacherId2 = Guid.NewGuid();
+            Guid headTeacherId3 = Guid.NewGuid();
+            Guid headTeacherId4 = Guid.NewGuid();
+
             #endregion
 
             // Table
@@ -454,7 +460,7 @@ namespace Kreta.Backend.Context
                     FatherId=parentId6,
                     SchoolClassID=schoolClassId3,
                 },
-                                new Student
+                new Student
                 {
                     Id=studentId8,
                     FirstName="Kinga",
@@ -465,6 +471,32 @@ namespace Kreta.Backend.Context
                     EducationLevelId=Guid.Empty,
                     MotherId=parentId5,
                     FatherId=parentId6,
+                    SchoolClassID=schoolClassId3,
+                },
+                new Student
+                {
+                    Id=studentId9,
+                    FirstName="Zalán",
+                    LastName="Zabhegyező",
+                    IsWoman=false,
+                    BirthDay=new DateTime(2019,7,17),
+                    PlaceOfBirth="Tataháza",
+                    EducationLevelId=Guid.Empty,
+                    MotherId=null,
+                    FatherId=null,
+                    SchoolClassID=schoolClassId3,
+                },
+                new Student
+                {
+                    Id=studentId10,
+                    FirstName="Petra",
+                    LastName="Pontos",
+                    IsWoman=true,
+                    BirthDay=new DateTime(2018,2,12),
+                    PlaceOfBirth="Miskolc",
+                    EducationLevelId=Guid.Empty,
+                    MotherId=null,
+                    FatherId=null,
                     SchoolClassID=schoolClassId3,
                 },
             };
@@ -750,6 +782,42 @@ namespace Kreta.Backend.Context
                 },
             };
             #endregion
+            List<HeadTeacher> headTeachers = new()
+            {
+                new HeadTeacher
+                {
+                    Id=headTeacherId1 ,
+                    Name="Oszi Ottó",
+                    BirthDay=new DateTime(1994,04,04),
+                    Allowance=5000,
+                    IsAssistant=true,
+                },
+                new HeadTeacher
+                {
+                    Id=headTeacherId2 ,
+                    Name="Határozott Hedvig",
+                    BirthDay=new DateTime(1996,06,06),
+                    Allowance=8000,
+                    IsAssistant=false,
+                },
+                new HeadTeacher
+                {
+                    Id=headTeacherId3 ,
+                    Name="Gyermekbarát Gyula",
+                    BirthDay=new DateTime(1994,02,24),
+                    Allowance=8000,
+                    IsAssistant=false,
+                },
+                new HeadTeacher
+                {
+                    Id=headTeacherId4 ,
+                    Name="Ideges Ida",
+                    BirthDay=new DateTime(1994,05,25),
+                    Allowance=8400,
+                    IsAssistant=false,
+                },
+            };
+
 
             modelBuilder.Entity<EducationLevel>().HasData(educationLevels);
             modelBuilder.Entity<TypeOfEducation>().HasData(typeOfEducations);
@@ -764,6 +832,8 @@ namespace Kreta.Backend.Context
             modelBuilder.Entity<PublicSpace>().HasData(publicSpaces);
             modelBuilder.Entity<SchoolClassSubjects>().HasData(schoolClassSubjects);
             modelBuilder.Entity<TeachersTeachInSchoolClass>().HasData(teachersTeachInSchoolClasses);
+
+            modelBuilder.Entity<HeadTeacher>().HasData(headTeachers);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Kreta.Backend.Repos.Managers
         private ISubjectTypeRepo? _subjectTypeRepo;
         private ITeacherRepo? _teacherRepo;
         private ITypeOfEducationRepo? _typeOfEducationRepo;
+        private IHeadTeacherRepo? _headTeacherRepo;
 
         private ISchoolClassSubjectsRepo? _schoolClassSubjectsRepo;
 
@@ -30,7 +31,8 @@ namespace Kreta.Backend.Repos.Managers
             ISubjectTypeRepo subjectTypeRepo,
             ISchoolClassSubjectsRepo? schoolClassSubjectsRepo,
             ITeacherRepo? teacherRepo,
-            ITypeOfEducationRepo? _typeOfEducationRepo
+            ITypeOfEducationRepo? typeOfEducationRepo,
+            IHeadTeacherRepo? headTeacherRepo
             )
         {
             _addressRepo = addressRepo;
@@ -45,6 +47,8 @@ namespace Kreta.Backend.Repos.Managers
             _subjectTypeRepo = subjectTypeRepo;
             _teacherRepo = teacherRepo;
             _teacherRepo=teacherRepo;
+            _typeOfEducationRepo = typeOfEducationRepo;
+            _headTeacherRepo = headTeacherRepo;
         }
         public IAddressRepo? AddressRepo => _addressRepo;
         public IEducationLevelRepo? EducationLevelRepo => _educationLevelRepo;
@@ -58,5 +62,6 @@ namespace Kreta.Backend.Repos.Managers
         public ISubjectTypeRepo? SubjectTypeRepo => _subjectTypeRepo;
         public ITeacherRepo? TeacherRepo => _teacherRepo;
         public ITypeOfEducationRepo? TypeOfEducationRepo => _typeOfEducationRepo;
+        public IHeadTeacherRepo? HeadTeacherRepo => _headTeacherRepo;
     }
 }

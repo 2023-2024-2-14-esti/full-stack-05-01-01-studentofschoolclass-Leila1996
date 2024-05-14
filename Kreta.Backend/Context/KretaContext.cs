@@ -18,9 +18,12 @@ namespace Kreta.Backend.Context
         public DbSet<SubjectType> SubjectTypes { get; set; }    
         public DbSet<Address> Addresss { get; set; }
         public DbSet<PublicSpace> PublicSpaces { get; set; }
+        public DbSet<HeadTeacher> HeadTeachers { get; set; }
+
         public DbSet<TeachersTeachInSchoolClass> TeacherTeachInSchoolClass { get; set; }
         public DbSet<SchoolClassStudents> SchoolClassStudents { get; set; }
         public DbSet<SchoolClassSubjects> SchoolClassSubjects { get; set; }
+        
         public KretaContext(DbContextOptions options) : base(options)
         {
         }
