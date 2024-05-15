@@ -1,6 +1,8 @@
-﻿namespace Kreta.HttpService.Services
+﻿using Kreta.Shared.Models.SchoolCitizens;
+
+namespace Kreta.HttpService.Services
 {
-    public interface IHeadTeacherService
+    public interface IHeadTeacherService : IBaseService<HeadTeacher>
     {
 
         public Task<int> GetNumberOfHeadTeacher(bool isAssistant);
