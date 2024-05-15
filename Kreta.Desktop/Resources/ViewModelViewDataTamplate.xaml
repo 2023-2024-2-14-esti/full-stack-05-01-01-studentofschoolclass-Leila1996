@@ -29,7 +29,10 @@
     <DataTemplate DataType="{x:Type schoolCitizensViewModels:ParentViewModel}">
         <schoolCitizensView:ParentView/>
     </DataTemplate>
-    
+    <DataTemplate DataType="{x:Type schoolCitizensViewModels:HeadTeacherViewModel}">
+        <schoolCitizensView:HeadTeacherView/>
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type schoolGradesViewModel:ActualLessonGradesViewModel}">
         <schoolGradesView:ActualLessonGradesView/>
     </DataTemplate>

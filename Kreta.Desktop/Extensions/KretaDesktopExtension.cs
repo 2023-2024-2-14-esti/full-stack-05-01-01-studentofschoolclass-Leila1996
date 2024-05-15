@@ -30,6 +30,8 @@ namespace Kreta.Desktop.Extensions
             services.AddScoped<ITypeOfEducationService, TypleOfEducationService>();
             services.AddScoped<IEducationLavelService, EducationLevelService>();
 
+            services.AddScoped<IHeadTeacherService, HeadTeacherService>();
+
             services.AddScoped<ISchoolClassSubjectsService, SchoolClassSubjectsService>();
 
         }

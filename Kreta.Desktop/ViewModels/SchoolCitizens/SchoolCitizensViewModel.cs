@@ -10,6 +10,7 @@ namespace Kreta.Desktop.ViewModels.SchoolCitizens
         private readonly StudentViewModel _studentViewModel;
         private readonly ParentViewModel _parentViewModel;
         private readonly TeacherViewModel _teacherViewModel;
+        private readonly HeadTeacherViewModel _headTeacherViewModel;
 
         public SchoolCitizensViewModel()
         {
@@ -17,13 +18,15 @@ namespace Kreta.Desktop.ViewModels.SchoolCitizens
             _studentViewModel = new StudentViewModel();
             _parentViewModel = new ParentViewModel();
             _teacherViewModel = new TeacherViewModel();
+            _headTeacherViewModel= new HeadTeacherViewModel();
         }
 
-        public SchoolCitizensViewModel(StudentViewModel studentViewModel, ParentViewModel parentViewModel, TeacherViewModel teacherViewModel)
+        public SchoolCitizensViewModel(StudentViewModel studentViewModel, ParentViewModel parentViewModel, TeacherViewModel teacherViewModel, HeadTeacherViewModel headTeacherViewModel)
         {
             _studentViewModel = studentViewModel;
             _parentViewModel = parentViewModel;
             _teacherViewModel = teacherViewModel;
+            _headTeacherViewModel = headTeacherViewModel;
 
             CurrentSchoolCitizensChildView = _teacherViewModel;
         }
@@ -50,6 +53,13 @@ namespace Kreta.Desktop.ViewModels.SchoolCitizens
         {
             await _parentViewModel.InitializeAsync();
             CurrentSchoolCitizensChildView = _parentViewModel;
+        }
+
+        [RelayCommand]
+        public async Task ShowHeadTeacherViewModel()
+        {
+            await _headTeacherViewModel.InitializeAsync();
+            CurrentSchoolCitizensChildView = _headTeacherViewModel;
         }
     }
 }

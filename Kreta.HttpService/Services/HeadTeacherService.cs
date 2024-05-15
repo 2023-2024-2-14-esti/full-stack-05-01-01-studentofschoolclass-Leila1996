@@ -8,7 +8,7 @@ namespace Kreta.HttpService.Services
 {
     public class HeadTeacherService : BaseService<HeadTeacher, HeadTeacherDto>, IHeadTeacherService
     {
-        public HeadTeacherService(IHttpClientFactory? httpClientFactory, Assambler<HeadTeacher, HeadTeacherDto> assambler) : base(httpClientFactory, assambler)
+        public HeadTeacherService(IHttpClientFactory? httpClientFactory, HeadTeacherAssambler assambler) : base(httpClientFactory, assambler)
         {
         }
 
