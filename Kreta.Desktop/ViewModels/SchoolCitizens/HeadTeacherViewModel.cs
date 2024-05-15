@@ -18,8 +18,6 @@ namespace Kreta.Desktop.ViewModels.SchoolCitizens
 
         public async override Task InitializeAsync()
         {
-            int number = await _headTeacherService.GetNumberOfHeadTeacher(false);
-
             await base.InitializeAsync();
         }
     }
