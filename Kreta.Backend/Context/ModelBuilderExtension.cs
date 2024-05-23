@@ -441,7 +441,7 @@ namespace Kreta.Backend.Context
                     Id=studentId6,
                     FirstName="Fruzsina",
                     LastName="Fukar",
-                    IsWoman=false,
+                    IsWoman=true,
                     BirthDay=new DateTime(2019,9,9),
                     PlaceOfBirth="Miskolc",
                     EducationLevelId=EducationLevelId2,
@@ -452,7 +452,7 @@ namespace Kreta.Backend.Context
                     Id=studentId7,
                     FirstName="Kinga",
                     LastName="Kilógó",
-                    IsWoman=false,
+                    IsWoman=true,
                     BirthDay=new DateTime(2019,9,9),
                     PlaceOfBirth="Miskolc",
                     EducationLevelId=Guid.Empty,
@@ -463,9 +463,9 @@ namespace Kreta.Backend.Context
                 new Student
                 {
                     Id=studentId8,
-                    FirstName="Kinga",
+                    FirstName="Kitti",
                     LastName="Kilógó",
-                    IsWoman=false,
+                    IsWoman=true,
                     BirthDay=new DateTime(2019,9,9),
                     PlaceOfBirth="Miskolc",
                     EducationLevelId=Guid.Empty,
@@ -830,6 +830,7 @@ namespace Kreta.Backend.Context
                 },
             };
             #endregion
+            #region HeadTeacher
             List<HeadTeacher> headTeachers = new()
             {
                 new HeadTeacher
@@ -865,6 +866,7 @@ namespace Kreta.Backend.Context
                     IsAssistant=false,
                 },
             };
+            #endregion
 
 
             modelBuilder.Entity<EducationLevel>().HasData(educationLevels);
